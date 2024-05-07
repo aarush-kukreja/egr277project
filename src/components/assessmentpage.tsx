@@ -34,7 +34,7 @@ export function AssessmentPage() {
       localSuggestions.push("Getting in touch with support groups.");
       sentiments.push('negative');
     } else if (feeling <= 2) {
-      localSummary.push("It\'s good that you generally feel positive after using social media.");
+      localSummary.push("It&apos;s good that you generally feel positive after using social media.");
       sentiments.push('positive');
     }
 
@@ -45,9 +45,9 @@ export function AssessmentPage() {
     }
 
     if (fomo >= 4) {
-      localSummary.push("You experience \"fear of missing out\" quite often when not using social media.");
+      localSummary.push("You experience a fear of missing out quite often when not using social media.");
       sentiments.push('negative');
-      localSuggestions.push("Try to take a hiatus from time to time--learn what it\'s like to be out of the loop!");
+      localSuggestions.push("Try to take a hiatus from time to time--learn what it&apos;s like to be out of the loop!");
     }
 
     if (comparison >= 4) {
@@ -66,7 +66,7 @@ export function AssessmentPage() {
     const finalSummary = generateFinalSummary(localSummary, sentiments);
     setSummary(finalSummary.join(' '));
     // Ensure suggestions are added if any are present.
-    setSuggestions(localSuggestions.length > 0 ? localSuggestions : ["Keep doing what you\'re doing! Your social media use is normal."]);
+    setSuggestions(localSuggestions.length > 0 ? localSuggestions : ["Keep doing what you&apos;re doing! Your social media use is normal."]);
   };
 
 
