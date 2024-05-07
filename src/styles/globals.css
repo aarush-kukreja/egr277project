@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.label-container {
+  background-color: #f3f4f6; /* light gray for non-selected */
+  border: 2px solid transparent; /* no border when not selected */
+  transition: background-color 0.3s, border 0.3s; /* smooth transition for UI changes */
+}
+
+.label-container.selected {
+  background-color: #cbd5e1; /* darker shade when selected */
+  border-color: #051735; /* blue border for selected */
+}
+

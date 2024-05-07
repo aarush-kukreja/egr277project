@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Homepage } from "@/components/homepage";
+import { Digitaldetox } from "@/components/digitaldetox";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
 <div >
-  < Homepage />
+  < Digitaldetox />
 </div>
     
   );
