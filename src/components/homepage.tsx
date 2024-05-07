@@ -40,7 +40,7 @@ export function Homepage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Reclaim Your Mindful Presence</h2>
               <p className="text-gray-700 dark:text-gray-400">
-                Discover how social media impacts your mental health and learn strategies to maintain a healthy balance.
+                {'Discover how social media impacts your mental health and learn strategies to maintain a healthy balance.'}
               </p>
               <Link
                 className="inline-flex items-center justify-center bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-md"
