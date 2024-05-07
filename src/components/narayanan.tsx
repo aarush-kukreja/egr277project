@@ -2,6 +2,7 @@ import Link from "next/link"
 import { CardTitle, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 interface IconProps extends React.SVGProps<SVGSVGElement> { }
+import Image from 'next/image';
 
 
 export function Narayanan() {
@@ -19,7 +20,7 @@ export function Narayanan() {
                     </div>
                 </div>
                 <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col items-center justify-between">
-                    <img src="https://engineering.princeton.edu/wp-content/uploads/Episode_1_and_2_Narayanan_0.jpg" alt="Descriptive Image" className="w-full h-full object-cover rounded-lg" style={{ marginBottom: '1rem' }} />
+                    <Image src="https://engineering.princeton.edu/wp-content/uploads/Episode_1_and_2_Narayanan_0.jpg" alt="Descriptive Image" className="w-full h-full object-cover rounded-lg" style={{ marginBottom: '1rem' }} />
                     <Link
                         className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-900/80 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/80 dark:focus:ring-gray-300"
                         href="/resources"

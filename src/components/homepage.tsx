@@ -1,5 +1,6 @@
 import Link from "next/link"
 interface IconProps extends React.SVGProps<SVGSVGElement> { }
+import Image from 'next/image';
 
 export function Homepage() {
   return (
@@ -50,7 +51,7 @@ export function Homepage() {
               </Link>
             </div>
             <div>
-              <img
+              <Image
                 alt="Mindful Social"
                 height={700}
                 src="https://www.austinfitmagazine.com/wp-content/uploads/2022/04/Building-mindfulness-graphic.png"
@@ -65,7 +66,7 @@ export function Homepage() {
         <section className="py-12 md:py-20 px-6 md:px-12 bg-gray-900 text-white">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div>
-              <img
+              <Image
                 alt="Self-Assessment"
                 className="rounded-lg shadow-lg"
                 height={400}
@@ -109,7 +110,7 @@ export function Homepage() {
               </Link>
             </div>
             <div>
-              <img
+              <Image
                 alt="Resources"
                 className="rounded-lg shadow-lg"
                 height={400}
@@ -126,7 +127,7 @@ export function Homepage() {
         <section className="py-12 md:py-20 px-6 md:px-12 bg-gray-900 text-white">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div>
-              <img
+              <Image
                 alt="Community"
                 className="rounded-lg shadow-lg"
                 height={400}

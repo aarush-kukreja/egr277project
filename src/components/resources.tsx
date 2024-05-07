@@ -40,11 +40,11 @@ export function Resources() {
 
   const cards = [
     { title: "#anxiety", description: "Discover practical tips and strategies for using social media in a more mindful and intentional way." },
-    { title: "#egrclass6", description: "Learn about how EGR class 6's idea of simple checklists can be applied to social media companies." },
+    { title: "#egrclass6", description: "Learn about how EGR class 6\'s idea of simple checklists can be applied to social media companies." },
     { title: "#MentalHealthMatters", description: "Understand the impact of social media on mental health and strategies for maintaining well-being." },
-    { title: "#egrclass14", description: "See how class 14's idea of sical status and material positions applies in social media platforms." },
+    { title: "#egrclass14", description: "See how class 14]'s idea of sical status and material positions applies in social media platforms." },
     { title: "#digitaldetox", description: "Learn effective ways to take breaks from digital devices and reconnect with the present moment." },
-    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken's study." },
+    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken\'s study." },
     { title: "#narayanan", description: "See what Prof. Narayanan had to say on his paper, Understanding Social Media Recommendation Algorithms (class 23-24 reading)." },
     { title: "#egrclass3", description: "Understand the ideas of social construction in social media, and how the people affect the builder." },
   ];
