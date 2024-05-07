@@ -40,7 +40,8 @@ export function AnxietyPage() {
                     <div className="mb-8">
                         <p className="text-gray-600 dark:text-gray-400">
                             Social media is easily one of the leading causes of stress and anxiety in the contemporary world. Research suggests that social media can significantly affect the self-esteem of adolescents negatively. One study found that more time spent on social media correlates with lower self-esteem in teenagers. This is particularly acute among users who engage in high levels of social comparison, which can exacerbate feelings of inadequacy and foster a distorted self-image (Naslund et al., 2020; &apos;Social Media Victims&apos;). Furthermore, excessive social media use has been linked to various mental health issues, such as anxiety, depression, and loneliness. The effects are particularly pronounced among teens and young adults, who are the most active users of these platforms (&apos;Penn Medicine Lancaster General Health&apos;; &apos;Social Media Victims&apos;). The impact extends beyond emotional distress, influencing school performance. Parents are advised to monitor social media use and encourage activities that promote real-life interactions and achievements. If you ever feel anxious or stressed on social media, it is imperative you seek help or consider doing a social media detox. We recommend checking out our resource on detoxing!
-                        </p>                    </div>
+                        </p>
+                    </div>
                 </div>
                 <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col items-center justify-between">
                     <Image src="https://www.uhsma.com/wp-content/uploads/2022/03/shutterstock_1531258040-1024x683.jpg" alt="Descriptive Image" className="w-full h-full object-cover rounded-lg" style={{ marginBottom: '1rem' }} />
