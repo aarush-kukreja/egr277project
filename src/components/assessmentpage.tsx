@@ -158,7 +158,7 @@ export function AssessmentPage() {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-900 text-white py-6 px-6 md:px-12">
+      <footer className="bg-gray-900 text-white py-6 px-6 md:px-12 fade-in-element">
         <div className="flex items-center justify-between">
           <p className="text-sm">Mindful Social</p>
           <nav className="hidden md:flex items-center space-x-6">
