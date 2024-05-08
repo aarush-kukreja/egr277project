@@ -164,15 +164,20 @@ export function Homepage() {
         </section>
       </main>
       <footer className="bg-gray-900 text-white py-6 px-6 md:px-12 fade-in-element">
-        <div className="flex items-center justify-between">
-          <p className="text-sm">Mindful Social</p>
-          <nav className="hidden md:flex items-center space-x-6">
-            <div>
-              Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.
-            </div>
-          </nav>
-        </div>
-      </footer>
+      <div className="flex items-center justify-between">
+        <p className="text-sm">Mindful Social</p>
+        <nav className="hidden md:flex items-center space-x-6">
+          <div>
+            Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.
+          </div>
+          <Link legacyBehavior href="https://github.com/aarush-kukreja/egr277project" passHref>
+            <a className="hover:underline fade-in-element">
+              <GithubIcon className="w-6 h-6" />
+            </a>
+          </Link>
+        </nav>
+      </div>
+    </footer>
 
     </div>
   )
@@ -227,13 +232,11 @@ function BrainIcon(props: IconProps) {
 }
 
 
-function MenuIcon(props: IconProps) {
+function GithubIcon(props: IconProps) {
   return (
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -241,9 +244,7 @@ function MenuIcon(props: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-1.02-.01-1.85-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.64-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.62 0 0 .84-.27 2.75 1.02A9.578 9.578 0 0112 6.8c.85 0 1.7.11 2.5.32 1.91-1.29 2.75-1.02 2.75-1.02.55 1.36.2 2.37.1 2.62.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.69.93.69 1.87 0 1.35-.01 2.44-.01 2.77 0 .27.18.58.69.48A10.025 10.025 0 0022 12c0-5.52-4.48-10-10-10z"/>
     </svg>
-  )
+  );
 }
