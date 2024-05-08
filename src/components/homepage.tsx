@@ -1,8 +1,26 @@
+import React, { useEffect } from 'react';
 import Link from "next/link"
 interface IconProps extends React.SVGProps<SVGSVGElement> { }
 import Image from 'next/image';
 
 export function Homepage() {
+  useEffect(() => {
+    // Check if animations have already been played
+    const animationsPlayed = localStorage.getItem('animationsPlayed');
+
+    if (!animationsPlayed) {
+      // If animations haven't been played, add the 'fade-in-element' class to elements
+      const elements = document.querySelectorAll('.might-fade');
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add('fade-in-element');
+        }, index * 100); // Increase delay for each element
+      });
+      // Set flag in local storage
+      localStorage.setItem('animationsPlayed', 'true');
+    }
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-gray-900 text-white py-4 px-6 md:px-12">
@@ -10,21 +28,21 @@ export function Homepage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-2">
-                <BrainIcon className="h-8 w-8" />
-                <h1 className="text-2xl font-bold">Mindful Social</h1>
+                <BrainIcon className="h-8 w-8 fade-in-element" />
+                <h1 className="text-2xl font-bold fade-in-element">Mindful Social</h1>
               </Link>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link className="hover:underline" href="/assessments">
+              <Link className="hover:underline fade-in-element" href="/assessments">
                 Self-Assessment
               </Link>
-              <Link className="hover:underline" href="/resources">
+              <Link className="hover:underline fade-in-element" href="/resources">
                 Resources
               </Link>
-              <Link className="hover:underline" href="https://ak34512.wixsite.com/mindful-social-1">
+              <Link className="hover:underline fade-in-element" href="https://ak34512.wixsite.com/mindful-social-1">
                 Community
               </Link>
-              <Link className="hover:underline" href="https://www.teladochealth.com/expert-care/mental-health">
+              <Link className="hover:underline fade-in-element" href="https://www.teladochealth.com/expert-care/mental-health">
                 Experts
               </Link>
             </nav>
@@ -34,9 +52,9 @@ export function Homepage() {
           </div>
         </header>
       </header>
-      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white">
+      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white ">
         <section className="py-12 md:py-20 px-6 md:px-12">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in-element">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Reclaim Your Mindful Presence</h2>
               <p className="text-gray-700 dark:text-gray-400">
@@ -54,7 +72,7 @@ export function Homepage() {
               <Image
                 alt="Mindful Social"
                 height={700}
-                src="https://www.austinfitmagazine.com/wp-content/uploads/2022/04/Building-mindfulness-graphic.png"
+                src="/mindful.png"
                 style={{
                   objectFit: "cover",
                 }}
@@ -64,13 +82,13 @@ export function Homepage() {
           </div>
         </section>
         <section className="py-12 md:py-20 px-6 md:px-12 bg-gray-900 text-white">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in-element">
             <div>
               <Image
                 alt="Self-Assessment"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg"
                 height={400}
-                src="https://upraise.io/wp-content/uploads/2022/12/10-Functions-of-Human-Resource-Management-banner2.webp"
+                src="/upraise.png"
                 style={{
                   aspectRatio: "600/400",
                   objectFit: "cover",
@@ -94,7 +112,7 @@ export function Homepage() {
           </div>
         </section>
         <section className="py-12 md:py-20 px-6 md:px-12">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in-element">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Connect with Our Community</h2>
               <p className="text-gray-700 dark:text-gray-400">
@@ -112,9 +130,9 @@ export function Homepage() {
             <div>
               <Image
                 alt="Resources"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg"
                 height={400}
-                src="https://crowdforthink.com/assets/uploads/blogs/bd9f4bd26603f2c411a29ae428c823db.png"
+                src="/family.png"
                 style={{
 
                   objectFit: "cover",
@@ -125,13 +143,13 @@ export function Homepage() {
           </div>
         </section>
         <section className="py-12 md:py-20 px-6 md:px-12 bg-gray-900 text-white">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in-element">
             <div>
               <Image
                 alt="Community"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg"
                 height={400}
-                src="https://d1pfint8izqszg.cloudfront.net/web7/images/experts-hero.png"
+                src="/hero.png"
                 style={{
                   aspectRatio: "600/400",
                   objectFit: "cover",
@@ -156,7 +174,7 @@ export function Homepage() {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-900 text-white py-6 px-6 md:px-12">
+      <footer className="bg-gray-900 text-white py-6 px-6 md:px-12 ">
         <div className="flex items-center justify-between">
           <p className="text-sm">© 2024 Mindful Social. All rights reserved.</p>
           <nav className="hidden md:flex items-center space-x-6">

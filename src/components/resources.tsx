@@ -39,14 +39,21 @@ export function Resources() {
   };
 
   const cards = [
-    { title: "#anxiety", description: "Discover practical tips and strategies for using social media in a more mindful and intentional way." },
-    { title: "#egrclass6", description: "Learn about how EGR class 6&apos;s idea of simple checklists can be applied to social media companies." },
-    { title: "#MentalHealthMatters", description: "Understand the impact of social media on mental health and strategies for maintaining well-being." },
-    { title: "#egrclass14", description: "See how class 14&apos;s idea of sical status and material positions applies in social media platforms." },
-    { title: "#digitaldetox", description: "Learn effective ways to take breaks from digital devices and reconnect with the present moment." },
-    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken&apos;s study." },
-    { title: "#narayanan", description: "See what Prof. Narayanan had to say on his paper, Understanding Social Media Recommendation Algorithms (class 23-24 reading)." },
-    { title: "#egrclass3", description: "Understand the ideas of social construction in social media, and how the people affect the builder." },
+    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/-QDjx_spkwI", type: "video" }, // YouTube video example
+    { title: "#anxiety", description: "Discover practical tips and strategies for using social media in a more mindful and intentional way.",  type: "text"  },
+    { title: "#egrclass6", description: "Learn about how EGR class 6's idea of simple checklists can be applied to social media companies.",  type: "text"  },
+    { title: "#MentalHealthMatters", description: "Understand the impact of social media on mental health and strategies for maintaining well-being.",  type: "text"  },
+    { title: "#egrclass14", description: "See how class 14's idea of sical status and material positions applies in social media platforms.",  type: "text"  },
+    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/z5Q5Sz8wh8M", type: "video" }, // YouTube video example
+    { title: "#digitaldetox", description: "Learn effective ways to take breaks from digital devices and reconnect with the present moment.",  type: "text"  },
+    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/OavioNSzjUM", type: "video" }, // YouTube video example
+    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken's study.",  type: "text"  },
+    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/5wQx3AteHjw", type: "video" }, // YouTube video example
+    { title: "#narayanan", description: "See what Prof. Narayanan had to say on his paper, Understanding Social Media Recommendation Algorithms (class 23-24 reading).",  type: "text"  },
+    { title: "#egrclass3", description: "Understand the ideas of social construction in social media, and how the people affect the builder.",  type: "text"  },
+
+
+
   ];
 
   return (
@@ -80,26 +87,34 @@ export function Resources() {
           </div>
         </header>
       </header>
-      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white">
-        <section className="py-12 md:py-16 lg:py-20">
+      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white fade-in-element">
+        <section className="py-12 md:py-16 lg:py-20 fade-in-element">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">Mindful Social Resources</h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {cards.map(card => (
-                <Card key={card.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                <Card key={card.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-md fade-in-element">
                   <CardHeader>
                     <CardTitle>{card.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+                    {card.type === 'text' ? (
+                      <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+                    ) : (
+                      <iframe width="100%" height="100%" src={card.description} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    )}
                   </CardContent>
                   <CardFooter>
                     <div className="flex items-center justify-between">
-                      <Link href={`/${card.title.slice(1)}`} passHref>
-                        <Button size="sm" variant="link">
-                          Read More
-                        </Button>
-                      </Link>
+                      {card.type === 'text' ? (
+                        <Link href={`/${card.title.slice(1)}`} passHref>
+                          <Button size="sm" variant="link">Read More</Button>
+                        </Link>
+                      ) : (
+                        <a href={card.description}  rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:underline">
+                          Watch on YouTube
+                        </a>
+                      )}
                       <Button className="text-gray-500 dark:text-gray-400" size="icon" variant="ghost" onClick={() => toggleFavorite(card.title)}>
                         <HeartIcon filled={favorites[card.title]} className="w-6 h-6" />
                         <span className="sr-only">Favorite</span>
@@ -117,9 +132,9 @@ export function Resources() {
           <p className="text-sm">© 2024 Mindful Social. All rights reserved.</p>
           <nav className="hidden md:flex items-center space-x-6">
             <div>
-             Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.
+              Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.
             </div>
-           
+
           </nav>
         </div>
       </footer>

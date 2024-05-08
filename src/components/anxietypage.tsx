@@ -43,8 +43,17 @@ export function AnxietyPage() {
                         </p>
                     </div>
                 </div>
-                <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col items-center justify-between">
-                    <Image src="https://www.uhsma.com/wp-content/uploads/2022/03/shutterstock_1531258040-1024x683.jpg" alt="Descriptive Image" className="w-full h-full object-cover rounded-lg" style={{ marginBottom: '1rem' }} />
+                <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col justify-center items-center space-y-8"> {/* Added space-y-8 for spacing */}
+                    <div className="w-full h-auto flex justify-center items-center"> {/* Ensures image is centered */}
+                        <Image
+                            src="/anxiety.png"
+                            width={500}
+                            height={500}
+                            alt="Picture of the author"
+                            objectFit="cover"
+                            className="rounded-lg"
+                        />
+                    </div>
                     <Link
                         className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-900/80 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/80 dark:focus:ring-gray-300"
                         href="/resources"
@@ -53,6 +62,7 @@ export function AnxietyPage() {
                         Back
                     </Link>
                 </div>
+
             </div>
         </div>
     )

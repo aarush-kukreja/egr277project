@@ -115,7 +115,7 @@ export function AssessmentPage() {
           </div>
         </header>
       </header>
-      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white">
+      <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white fade-in-element">
         <section className="py-12 md:py-16 lg:py-20">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
 
@@ -129,7 +129,7 @@ export function AssessmentPage() {
                 generateSuggestion();
               }}>
                 {questions.map((question, index) => (
-                  <div key={index} className="mb-4">
+                  <div key={index} className="mb-4 fade-in-element">
                     <label className="block mb-2">
                       {question.text} ({question.range.min}: {question.label.split(' ')[0]}, {question.range.max}: {question.label.split(' ')[2]})
                     </label>
@@ -148,7 +148,7 @@ export function AssessmentPage() {
                     <div className="text-center">{answers[index]}</div>
                   </div>
                 ))}
-                <div className="flex justify-center">
+                <div className="flex justify-center fade-in-element">
                   <button
                     type="submit"
                     className="bg-slate-700 text-white px-4 py-2 rounded transition-colors duration-150 hover:bg-slate-800 hover:scale-95 active:scale-90"                  >

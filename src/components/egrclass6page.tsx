@@ -15,12 +15,21 @@ export function EGRclass6() {
                     </div>
                     <div className="mb-8">
                         <p className="text-gray-600 dark:text-gray-400">
-                        {'Social media companies often resort to temporary fixes like banning certain words, phrases, or users to address complex issues like cyberbullying. However, these technical solutions fail to solve the deeper problem of online cyberbullying. People will always find a way to circumvent these restrictions and spread hate. Highlighted in EGR class 6, entities can rely on simplistic checklists or rules to tackle complex challenges, which is an inadequate approach—this is what many large social media companies do. Instead of relying on these overly simplistic checklists, social media platforms should develop comprehensive strategies to address issues like cyberbullying, misinformation, and online harassment. This could involve a combination of AI content moderation policies (with robustly trained models), user education initiatives, community-building efforts, and fostering a culture of empathy and responsible online behavior. By moving beyond simplistic checklists and attacking these challenges heaf-on, social media companies can work towards creating a safer, more responsible online environment for all users.'}
+                            {'Social media companies often resort to temporary fixes like banning certain words, phrases, or users to address complex issues like cyberbullying. However, these technical solutions fail to solve the deeper problem of online cyberbullying. People will always find a way to circumvent these restrictions and spread hate. Highlighted in EGR class 6, entities can rely on simplistic checklists or rules to tackle complex challenges, which is an inadequate approach—this is what many large social media companies do. Instead of relying on these overly simplistic checklists, social media platforms should develop comprehensive strategies to address issues like cyberbullying, misinformation, and online harassment. This could involve a combination of AI content moderation policies (with robustly trained models), user education initiatives, community-building efforts, and fostering a culture of empathy and responsible online behavior. By moving beyond simplistic checklists and attacking these challenges heaf-on, social media companies can work towards creating a safer, more responsible online environment for all users.'}
                         </p>
                     </div>
                 </div>
-                <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col items-center justify-between">
-                    <Image src="https://www.creativefabrica.com/wp-content/uploads/2021/06/23/Checklist-Icon-Template-Design-Vector-Graphics-13750844-1.jpg" alt="Descriptive Image" className="w-full h-full object-cover rounded-lg" style={{ marginBottom: '1rem' }} />
+                <div className="w-1/3 bg-gray-300 dark:bg-gray-700 p-4 flex flex-col justify-center items-center space-y-8"> {/* Added space-y-8 for spacing */}
+                    <div className="w-full h-auto flex justify-center items-center"> {/* Ensures image is centered */}
+                        <Image
+                            src="/bandaidfix.png"
+                            width={500}
+                            height={500}
+                            alt="Picture of the author"
+                            objectFit="cover"
+                            className="rounded-lg"
+                        />
+                    </div>
                     <Link
                         className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-900/80 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/80 dark:focus:ring-gray-300"
                         href="/resources"
