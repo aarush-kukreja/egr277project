@@ -20,37 +20,36 @@ export function Resources() {
     const storedFavorites = localStorage.getItem('favorite-states');
     if (storedFavorites) {
       const parsedFavorites = JSON.parse(storedFavorites);
-      console.log("Loaded favorites:", parsedFavorites); // Debugging log
+      console.log("Loaded favorites:", parsedFavorites);
       setFavorites(parsedFavorites);
     }
   }, []);
 
   useEffect(() => {
-    console.log("Saving favorites:", favorites); // Debugging log
+    console.log("Saving favorites:", favorites);
     localStorage.setItem('favorite-states', JSON.stringify(favorites));
   }, [favorites]);
 
   const toggleFavorite = (key: string) => {
-    const newFavorites = {
-      ...favorites,
-      [key]: !favorites[key]
-    };
-    setFavorites(newFavorites);
+    setFavorites(prevFavorites => ({
+      ...prevFavorites,
+      [key]: !prevFavorites[key],
+    }));
   };
 
   const cards = [
-    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/-QDjx_spkwI", type: "video" }, // YouTube video example
-    { title: "#anxiety", description: "Discover practical tips and strategies for using social media in a more mindful and intentional way.",  type: "text"  },
-    { title: "#egrclass6", description: "Learn about how EGR class 6's idea of simple checklists can be applied to social media companies.",  type: "text"  },
-    { title: "#MentalHealthMatters", description: "Understand the impact of social media on mental health and strategies for maintaining well-being.",  type: "text"  },
-    { title: "#egrclass14", description: "See how class 14's idea of sical status and material positions applies in social media platforms.",  type: "text"  },
-    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/z5Q5Sz8wh8M", type: "video" }, // YouTube video example
-    { title: "#digitaldetox", description: "Learn effective ways to take breaks from digital devices and reconnect with the present moment.",  type: "text"  },
-    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/OavioNSzjUM", type: "video" }, // YouTube video example
-    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken's study.",  type: "text"  },
-    { title: "#YouTubeVideo", description: "https://www.youtube.com/embed/5wQx3AteHjw", type: "video" }, // YouTube video example
-    { title: "#narayanan", description: "See what Prof. Narayanan had to say on his paper, Understanding Social Media Recommendation Algorithms (class 23-24 reading).",  type: "text"  },
-    { title: "#egrclass3", description: "Understand the ideas of social construction in social media, and how the people affect the builder.",  type: "text"  },
+    { title: "#YouTubeVideo1", description: "https://www.youtube.com/embed/-QDjx_spkwI", type: "video" }, // YouTube video example
+    { title: "#anxiety", description: "Discover practical tips and strategies for using social media in a more mindful and intentional way.", type: "text" },
+    { title: "#egrclass6", description: "Learn about how EGR class 6's idea of simple checklists can be applied to social media companies.", type: "text" },
+    { title: "#MentalHealthMatters", description: "Understand the impact of social media on mental health and strategies for maintaining well-being.", type: "text" },
+    { title: "#egrclass14", description: "See how class 14's idea of sical status and material positions applies in social media platforms.", type: "text" },
+    { title: "#YouTubeVideo2", description: "https://www.youtube.com/embed/z5Q5Sz8wh8M", type: "video" }, // YouTube video example
+    { title: "#digitaldetox", description: "Learn effective ways to take breaks from digital devices and reconnect with the present moment.", type: "text" },
+    { title: "#YouTubeVideo3", description: "https://www.youtube.com/embed/OavioNSzjUM", type: "video" }, // YouTube video example
+    { title: "#egrclass20", description: "See how a single post by a user, as explained by Gillespie, can have unprecendted impacts and Bakken's study.", type: "text" },
+    { title: "#YouTubeVideo4", description: "https://www.youtube.com/embed/5wQx3AteHjw", type: "video" }, // YouTube video example
+    { title: "#narayanan", description: "See what Prof. Narayanan had to say on his paper, Understanding Social Media Recommendation Algorithms (class 23-24 reading).", type: "text" },
+    { title: "#egrclass3", description: "Understand the ideas of social construction in social media, and how the people affect the builder.", type: "text" },
 
 
 
@@ -61,7 +60,7 @@ export function Resources() {
       <header className="bg-gray-900 text-white py-6 px-3 md:py-4 md:px-12">
         <div className="flex md:flex-row flex-col items-center justify-between">
           <div className="mb-4 md:mb-0">
-          <Link href="/" className="flex justify-center md:justify-start space-x-4">
+            <Link href="/" className="flex justify-center md:justify-start space-x-4">
               <BrainIcon className="h-6 w-6 md:h-8 md:w-8 fade-in-element" />
               <h1 className="text-xl md:text-2xl font-bold fade-in-element">Mindful Social</h1>
             </Link>
@@ -98,7 +97,7 @@ export function Resources() {
                           <Button size="sm" variant="link">Read More</Button>
                         </Link>
                       ) : (
-                        <a href={card.description}  rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:underline">
+                        <a href={card.description} rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:underline">
                           Watch on YouTube
                         </a>
                       )}
