@@ -6,7 +6,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> { }
 export function AssessmentPage() {
   const questions = [
     { text: "How often do you check or use social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
-    { text: "How do you generally feel after using social media?", range: { min: 1, max: 5, step: 1 }, label: "great to terrible" },
+    { text: "How often do you feel bad after using social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
     { text: "How often do you experience FOMO when not using social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
     { text: "How often do you compare yourself to others on social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
     { text: "How often do you feel overwhelmed by the amount of information and content on social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
@@ -38,6 +38,12 @@ export function AssessmentPage() {
       sentiments.push('positive');
     }
 
+    if (answers.every(answer => answer === 3)) {
+      setSummary("Keep doing what you are doing! Your social media use is fine.");
+      setSuggestions([]);
+      return; // Exit the function early
+    }  
+
     if (usage >= 4) {
       localSummary.push("You seem to check or use social media frequently.");
       sentiments.push('negative');
@@ -66,7 +72,7 @@ export function AssessmentPage() {
     const finalSummary = generateFinalSummary(localSummary, sentiments);
     setSummary(finalSummary.join(' '));
     // Ensure suggestions are added if any are present.
-    setSuggestions(localSuggestions.length > 0 ? localSuggestions : ["Keep doing what you are doing! Your social media use is normal."]);
+    setSuggestions(localSuggestions.length > 0 ? localSuggestions : ["Keep doing what you are doing! Your social media use is fine."]);
   };
 
 
@@ -160,7 +166,7 @@ export function AssessmentPage() {
       </main>
       <footer className="bg-gray-900 text-white py-6 px-6 md:px-12">
         <div className="flex items-center justify-between">
-          <p className="text-sm">© 2024 Mindful Social. All rights reserved.</p>
+          <p className="text-sm">Mindful Social</p>
           <nav className="hidden md:flex items-center space-x-6">
             <div>
               Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.

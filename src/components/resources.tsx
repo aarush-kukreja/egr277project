@@ -116,7 +116,7 @@ export function Resources() {
       </main>
       <footer className="bg-gray-900 text-white py-6 px-6 md:px-12">
         <div className="flex items-center justify-between">
-          <p className="text-sm">© 2024 Mindful Social. All rights reserved.</p>
+          <p className="text-sm">Mindful Social</p>
           <nav className="hidden md:flex items-center space-x-6">
             <div>
               Built 100% from scratch with Next.js and Tailwind CSS, deployed with Vercel, and coded in Visual Studio Code.
