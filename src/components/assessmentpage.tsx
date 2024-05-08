@@ -33,16 +33,10 @@ export function AssessmentPage() {
       localSummary.push("Using social media tends to leave you feeling negatively.");
       localSuggestions.push("Getting in touch with support groups.");
       sentiments.push('negative');
-    } else if (feeling <= 2) {
-      localSummary.push("It is good that you generally feel positive after using social media.");
+    } else if (feeling <= 3) {
+      localSummary.push("It is good that you generally feel positive or neutral after using social media.");
       sentiments.push('positive');
     }
-
-    if (answers.every(answer => answer === 3)) {
-      setSummary("Keep doing what you are doing! Your social media use is fine.");
-      setSuggestions([]);
-      return; // Exit the function early
-    }  
 
     if (usage >= 4) {
       localSummary.push("You seem to check or use social media frequently.");
