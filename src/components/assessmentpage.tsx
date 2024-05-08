@@ -41,13 +41,13 @@ export function AssessmentPage() {
     if (usage >= 4) {
       localSummary.push("You seem to check or use social media frequently.");
       sentiments.push('negative');
-      localSuggestions.push("Consider taking social media detoxes.");
+      localSuggestions.push("Consider taking social media detoxes, maybe limiting screen time on your social media apps. If you're underage, maybe your parents can help by setting limits, but try to take responsibility for yourself!");
     }
 
     if (fomo >= 4) {
       localSummary.push("You experience a fear of missing out quite often when not using social media.");
       sentiments.push('negative');
-      localSuggestions.push("Try to take a hiatus from time to time--learn what it is like to be out of the loop!");
+      localSuggestions.push("Try to take a hiatus from time to time--learn what it is like to be out of the loop! Socialize offline and try going outdoors.");
     }
 
     if (comparison >= 4) {
