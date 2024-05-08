@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from "next/link"
 interface IconProps extends React.SVGProps<SVGSVGElement> { }
 import Image from 'next/image';
 
 export function Homepage() {
+
   useEffect(() => {
     // Check if animations have already been played
     const animationsPlayed = localStorage.getItem('animationsPlayed');
@@ -23,35 +24,23 @@ export function Homepage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-gray-900 text-white py-4 px-6 md:px-12">
-        <header className="bg-gray-900 text-white py-4 px-6 md:px-12">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center space-x-2">
-                <BrainIcon className="h-8 w-8 fade-in-element" />
-                <h1 className="text-2xl font-bold fade-in-element">Mindful Social</h1>
-              </Link>
-            </div>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link className="hover:underline fade-in-element" href="/assessments">
-                Self-Assessment
-              </Link>
-              <Link className="hover:underline fade-in-element" href="/resources">
-                Resources
-              </Link>
-              <Link className="hover:underline fade-in-element" href="https://ak34512.wixsite.com/mindful-social-1">
-                Community
-              </Link>
-              <Link className="hover:underline fade-in-element" href="https://www.teladochealth.com/expert-care/mental-health">
-                Experts
-              </Link>
-            </nav>
-            <button className="md:hidden">
-              <MenuIcon className="h-6 w-6" />
-            </button>
+      <header className="bg-gray-900 text-white py-6 px-3 md:py-4 md:px-12">
+        <div className="flex md:flex-row flex-col items-center justify-between">
+          <div className="mb-4 md:mb-0">
+          <Link href="/" className="flex justify-center md:justify-start space-x-4">
+              <BrainIcon className="h-6 w-6 md:h-8 md:w-8 fade-in-element" />
+              <h1 className="text-xl md:text-2xl font-bold fade-in-element">Mindful Social</h1>
+            </Link>
           </div>
-        </header>
+          <nav className="flex justify-center md:justify-between md:items-center md:flex-row space-x-4">
+            <Link className="hover:underline fade-in-element text-sm md:text-base" href="/assessments">Self-Assessment</Link>
+            <Link className="hover:underline fade-in-element text-sm md:text-base" href="/resources">Resources</Link>
+            <Link className="hover:underline fade-in-element text-sm md:text-base" href="https://ak34512.wixsite.com/mindful-social-1">Community</Link>
+            <Link className="hover:underline fade-in-element text-sm md:text-base" href="https://www.teladochealth.com/expert-care/mental-health">Experts</Link>
+          </nav>
+        </div>
       </header>
+
       <main className="flex-1 bg-gray-100 dark:bg-gray-900 dark:text-white ">
         <section className="py-12 md:py-20 px-6 md:px-12">
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in-element">
