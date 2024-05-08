@@ -9,7 +9,7 @@ export function AssessmentPage() {
     { text: "How often do you feel bad after using social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
     { text: "How often do you experience FOMO when not using social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
     { text: "How often do you compare yourself to others on social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
-    { text: "How often do you feel overwhelmed by the amount of information and content on social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
+    { text: "How often do you feel overwhelmed by the amount of content on social media?", range: { min: 1, max: 5, step: 1 }, label: "never to always" },
   ];
 
   const [answers, setAnswers] = useState<number[]>(questions.map(() => 1));
